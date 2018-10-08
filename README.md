@@ -1,49 +1,41 @@
+## Aplicativo Sustek
+Aplicativo da Sustek para Android e iOS
+ 
+## Motivação
+Criado para o TCC de Engenharia da Computação do Instituto Mauá de Tecnologia
 
-## React Native Seed v1.0.0
+## Versão
+[![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
+[![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
 
-### A [React Native](https://facebook.github.io/react-native/docs/getting-started.html) Starter Kit with [NativeBase](https://nativebase.io/) + [React Navigation](https://reactnavigation.org/) + [Redux](https://github.com/reactjs/redux) Apps (iOS & Android)
+## Estilo de Código
+React-Native
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+ 
+## Imagens
+![Alt text](foto_1.jpg?raw=true "Início")
 
-*Brought to you by [GeekyAnts](https://geekyants.com/)*
+## Tech/framework used
+react-native-cli: 1.2.0
+react-native: 0.55.4
 
+<b>Criado com</b>
+- [React-native](https://electron.atom.io)
 
-## Get Started
+## Funcionalidades
+Mostra as informações do usuário
 
-### 1. System Requirements
+## Instalação
+npm install 
+react-native run-android 
+ou 
+react-native run-ios
 
-* Globally installed [node](https://nodejs.org/en/)
+## Testes
+Rodar os testes :)
 
-* Globally installed [react-native CLI](https://facebook.github.io/react-native/docs/getting-started.html)
+## How to use?
+Baixar APK e instalar.
 
-
-### 2. Installation
-
-On the command prompt run the following commands
-
-```sh
-$ git clone https://github.com/GeekyAnts/react-native-boilerplate-redux-typescript.git
-
-$ cd react-native-boilerplate-redux-typescript/
-
-$ npm install
-  or
-  yarn
-```
-
-### Run on iOS
-
-  * Opt #1:
-		*	Run `npm start` in your terminal
-		*	Scan the QR code in your Expo app
-	*	Opt #2:
-		*	Run `npm run ios` in your terminal
-
-### Run on Android
-
-  * Opt #1:
-		*	Run `npm start` in your terminal
-		*	Scan the QR code in your Expo app
-	*	Opt #2:
-		*	Run `npm run android` in your terminal
-
-
-For apps with more advance designs, please visit **[NativeBase Market](https://market.nativebase.io/)**.
+## Crédito
+Lucas Rodrigues
