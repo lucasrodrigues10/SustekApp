@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Image, Text, View, TextInput} from 'react-native';
+import {AppRegistry, StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
 
 const styles = StyleSheet.create({
     bigblue: {
@@ -88,6 +88,19 @@ class BobEsponja extends Component {
     }
 }
 
+class Botao extends Component {
+    render() {
+        return (
+            <Button
+                onPress={() => {
+                    Alert.alert('NÃO ENCOSTA EM MIM, SEU TARADO!');
+                }}
+                title='Clica'
+            />
+        );
+    }
+}
+
 class Pisca extends Component {
     constructor(props) {
         super(props);
@@ -110,6 +123,7 @@ class Pisca extends Component {
     }
 }
 
+
 export default class Sustek extends Component {
     render() {
         return (
@@ -120,6 +134,7 @@ export default class Sustek extends Component {
                 <QuadradoLegal/>
                 <Quadradinhos/>
                 <Entrada/>
+                <Botao/>
             </View>
 
         );
