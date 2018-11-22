@@ -1,49 +1,129 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
-    );
-  }
-}
+import {AppRegistry, StyleSheet, Image, Text, View, TextInput} from 'react-native';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    bigblue: {
+        color: 'blue',
+        fontWeight: 'bold',
+        fontSize: 30,
+    },
+    red: {
+        color: 'red',
+    },
 });
+
+class Entrada extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {text: ''};
+    }
+
+    render() {
+        return (
+            <View style={{padding: 10}}>
+                <Text style={{color: 'red'}}>
+                    Tradutor de nomes!
+                </Text>
+                <TextInput
+                    style={{height: 40}}
+                    placeholder='Digite o seu nome: '
+                    onChangeText={(text) => this.setState({text})}
+                />
+                <Text style={{padding: 10, fontSize: 42}}>
+                    {this.state.text.split(' ').map((word) => word && 'viadinho').join(' ')}
+                </Text>
+            </View>
+        );
+    }
+}
+
+class QuadradoLegal extends Component {
+    render() {
+        return (
+            <View style={{flex: 1}}>
+                <View style={{flex: 1, backgroundColor: 'skyblue'}}/>
+                <View style={{flex: 3, backgroundColor: 'steelblue'}}/>
+            </View>
+        );
+    }
+}
+
+class Quadradinhos extends Component {
+    render() {
+        return (
+            <View style={{
+                flex: 1,
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'stretch',
+            }}>
+                <View style={{height: 50, width: 50, backgroundColor: 'red'}}/>
+                <View style={{height: 100, width: 100, backgroundColor: 'orange'}}/>
+                <View style={{height: 150, width: 150, backgroundColor: 'yellow'}}/>
+            </View>
+        );
+    }
+}
+
+class Greeting extends Component {
+    render() {
+        return (
+            <View style={{alignItems: 'center'}}>
+                <Text style={styles.bigblue}> Querido, {this.props.name}!</Text>
+            </View>
+        )
+    }
+}
+
+class BobEsponja extends Component {
+    render() {
+        let pic = {
+            uri: 'https://vignette.wikia.nocookie.net/spongebob/images/b/bb/Bob_Esponja.png/revision/latest?cb=20110611200507&path-prefix=pt-br'
+        };
+        return (
+            <View style={{alignItems: 'center'}}>
+                <Image source={pic} style={{width: 100, height: 100}}/>
+            </View>
+        );
+    }
+}
+
+class Pisca extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {isShowingText: true};
+
+        setInterval(() => (
+            this.setState(previousState => (
+                {isShowingText: !previousState.isShowingText}
+            ))
+        ), 1000);
+    }
+
+    render() {
+        if (!this.state.isShowingText) {
+            return null;
+        }
+        return (
+            <Text>{this.props.text}</Text>
+        );
+    }
+}
+
+export default class Sustek extends Component {
+    render() {
+        return (
+            <View style={{flex: 1}}>
+                <Pisca text={'Iluminatti Crianças Demoniacas!'}/>
+                <Greeting name={'Mr. Esponja'}/>
+                <BobEsponja/>
+                <QuadradoLegal/>
+                <Quadradinhos/>
+                <Entrada/>
+            </View>
+
+        );
+    }
+}
+
+AppRegistry.registerComponent('SustekApp', () => Sustek);
