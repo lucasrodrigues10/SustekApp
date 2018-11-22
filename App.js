@@ -88,15 +88,34 @@ class BobEsponja extends Component {
     }
 }
 
+const botao_estiloso = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    buttonContainer: {
+        margin: 20
+    },
+    alternativeLayoutButtonContainer: {
+        margin: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    }
+});
+
 class Botao extends Component {
     render() {
         return (
-            <Button
-                onPress={() => {
-                    Alert.alert('NÃO ENCOSTA EM MIM, SEU TARADO!');
-                }}
-                title='Clica'
-            />
+            <View style={botao_estiloso.container}>
+                <View style={botao_estiloso.buttonContainer}>
+                    <Button
+                        onPress={() => {
+                            Alert.alert('NÃO ENCOSTA EM MIM, SEU TARADO!');
+                        }}
+                        title='Clica'
+                    />
+                </View>
+            </View>
         );
     }
 }
