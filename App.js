@@ -143,7 +143,7 @@ class Pisca extends Component {
     }
 }
 
-class HomeScreen extends Component {
+class TelaInicial extends Component {
     render() {
         return (
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
@@ -155,35 +155,40 @@ class HomeScreen extends Component {
                     <Quadradinhos/>
                     <Entrada/>
                     <Botao/>
+                    <Button
+                        title="Login"
+                        onPress={() => this.props.navigation.navigate('Login')}
+                    />
                 </View>
             </View>
         );
     }
 }
 
-const AppNavigator = createStackNavigator({
-    Home: {
-        screen: HomeScreen
-    }
-});
-export default createAppContainer(AppNavigator);
-/*
-export default class Sustek extends Component {
+
+class TelaLogin extends React.Component {
     render() {
         return (
-            <View style={{flex: 1}}>
-                <Pisca text={'Iluminatti Crianças Demoniacas!!!!'}/>
-                <Greeting name={'Mr. Esponja'}/>
-                <BobEsponja/>
-                <QuadradoLegal/>
-                <Quadradinhos/>
-                <Entrada/>
-                <Botao/>
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+                <Text>Login</Text>
             </View>
-
         );
     }
 }
 
-AppRegistry.registerComponent('SustekApp', () => Sustek);
-*/
+const AppNavigator = createStackNavigator(
+    {
+        Home: TelaInicial,
+        Login: TelaLogin
+    },
+    {
+        initialRouteName: "Home"
+    }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+export default class App extends React.Component {
+    render() {
+        return <AppContainer />;
+    }
+}
