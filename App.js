@@ -147,7 +147,7 @@ export default class Sustek extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <Pisca text={'Iluminatti Crianças Demoniacas!'}/>
+                <Pisca text={'Iluminatti Crianças Demoniacas!!!!'}/>
                 <Greeting name={'Mr. Esponja'}/>
                 <BobEsponja/>
                 <QuadradoLegal/>
