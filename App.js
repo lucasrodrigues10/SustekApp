@@ -148,11 +148,13 @@ class TelaInicial extends Component {
         return (
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <View style={{flex: 1}}>
-
-
                     <Button
                         title="Login"
                         onPress={() => this.props.navigation.navigate('Login')}
+                    />
+                    <Button
+                        title="Teste"
+                        onPress={() => this.props.navigation.navigate('Teste')}
                     />
                 </View>
             </View>
@@ -164,7 +166,7 @@ class TelaInicial extends Component {
 class TelaLogin extends React.Component {
     render() {
         return (
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <Text>Login</Text>
                 <Button
                     title="Teste"
@@ -178,7 +180,7 @@ class TelaLogin extends React.Component {
 class TelaTeste extends React.Component {
     render() {
         return (
-            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <View style={{flex: 1}}>
                     <BobEsponja/>
                     <QuadradoLegal/>
@@ -205,6 +207,6 @@ const AppNavigator = createStackNavigator(
 const AppContainer = createAppContainer(AppNavigator);
 export default class App extends React.Component {
     render() {
-        return <AppContainer />;
+        return <AppContainer/>;
     }
 }
