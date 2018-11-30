@@ -148,13 +148,8 @@ class TelaInicial extends Component {
         return (
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <View style={{flex: 1}}>
-                    <Pisca text={'Iluminatti Crianças Demoniacas!!!!'}/>
-                    <Greeting name={'Mr. Esponja'}/>
-                    <BobEsponja/>
-                    <QuadradoLegal/>
-                    <Quadradinhos/>
-                    <Entrada/>
-                    <Botao/>
+
+
                     <Button
                         title="Login"
                         onPress={() => this.props.navigation.navigate('Login')}
@@ -171,6 +166,26 @@ class TelaLogin extends React.Component {
         return (
             <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
                 <Text>Login</Text>
+                <Button
+                    title="Teste"
+                    onPress={() => this.props.navigation.navigate('Teste')}
+                />
+            </View>
+        );
+    }
+}
+
+class TelaTeste extends React.Component {
+    render() {
+        return (
+            <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+                <View style={{flex: 1}}>
+                    <BobEsponja/>
+                    <QuadradoLegal/>
+                    <Quadradinhos/>
+                    <Entrada/>
+                    <Botao/>
+                </View>
             </View>
         );
     }
@@ -179,7 +194,8 @@ class TelaLogin extends React.Component {
 const AppNavigator = createStackNavigator(
     {
         Home: TelaInicial,
-        Login: TelaLogin
+        Login: TelaLogin,
+        Teste: TelaTeste
     },
     {
         initialRouteName: "Home"
