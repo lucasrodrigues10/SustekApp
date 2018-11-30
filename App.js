@@ -23,7 +23,7 @@ class Entrada extends Component {
         return (
             <View style={{padding: 10}}>
                 <Text style={{color: 'red'}}>
-                    Tradutor de nomes!
+                    Digite o seu usuário!
                 </Text>
                 <TextInput
                     style={{height: 40}}
@@ -33,6 +33,33 @@ class Entrada extends Component {
                 <Text style={{padding: 10, fontSize: 42}}>
                     {this.state.text.split(' ').map((word) => word && 'viadinho').join(' ')}
                 </Text>
+            </View>
+        );
+    }
+}
+
+class DadosLogin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {text: ''};
+    }
+
+    render() {
+        return (
+            <View style={{padding: 10}}>
+                <Text style={{color: 'red'}}>
+                    DIGITA CERTO, SEU BOSTINHA!
+                </Text>
+                <TextInput
+                    style={{height: 40}}
+                    placeholder='Usuário'
+                    onChangeText={(text) => this.setState({text})}
+                />
+                <TextInput
+                    style={{height: 40}}
+                    placeholder='Senha'
+                    onChangeText={(text) => this.setState({text})}
+                />
             </View>
         );
     }
@@ -147,27 +174,26 @@ class TelaInicial extends Component {
     render() {
         return (
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-                <View style={{flex: 1}}>
-                    <Button
-                        title="Login"
-                        onPress={() => this.props.navigation.navigate('Login')}
-                    />
-                    <Button
-                        title="Teste"
-                        onPress={() => this.props.navigation.navigate('Teste')}
-                    />
-                </View>
+                <Button
+                    title="Login"
+                    onPress={() => this.props.navigation.navigate('Login')}
+                />
+                <Button
+                    title="Logar"
+                    onPress={() => this.props.navigation.navigate('Teste')}
+                />
             </View>
         );
     }
 }
-
 
 class TelaLogin extends React.Component {
     render() {
         return (
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <Text>Login</Text>
+                <DadosLogin/>
+
                 <Button
                     title="Teste"
                     onPress={() => this.props.navigation.navigate('Teste')}
