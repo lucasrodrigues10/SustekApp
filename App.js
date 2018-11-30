@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
+import {createStackNavigator, createAppContainer} from "react-navigation";
 
 const styles = StyleSheet.create({
     bigblue: {
@@ -142,7 +143,31 @@ class Pisca extends Component {
     }
 }
 
+class HomeScreen extends Component {
+    render() {
+        return (
+            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+                <View style={{flex: 1}}>
+                    <Pisca text={'Iluminatti Crianças Demoniacas!!!!'}/>
+                    <Greeting name={'Mr. Esponja'}/>
+                    <BobEsponja/>
+                    <QuadradoLegal/>
+                    <Quadradinhos/>
+                    <Entrada/>
+                    <Botao/>
+                </View>
+            </View>
+        );
+    }
+}
 
+const AppNavigator = createStackNavigator({
+    Home: {
+        screen: HomeScreen
+    }
+});
+export default createAppContainer(AppNavigator);
+/*
 export default class Sustek extends Component {
     render() {
         return (
@@ -161,3 +186,4 @@ export default class Sustek extends Component {
 }
 
 AppRegistry.registerComponent('SustekApp', () => Sustek);
+*/
