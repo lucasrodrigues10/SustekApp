@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
+import {StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from "react-navigation";
 import logo from './src/img/sustek-logo.png'
 import moeda from './src/img/moeda.jpg'
