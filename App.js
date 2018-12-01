@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from "react-navigation";
+import logo from './sustek-logo.png'
 
 const styles = StyleSheet.create({
     bigblue: {
@@ -116,6 +117,20 @@ class BobEsponja extends Component {
     }
 }
 
+class Logo extends Component {
+    render() {
+        return (
+            <View style={{alignItems: 'center'}}>
+                <Image
+                    source={logo}
+                    style={{width: 400, height: 400}}
+                    resizeMode={'contain'}
+                />
+            </View>
+        );
+    }
+}
+
 const botao_estiloso = StyleSheet.create({
     container: {
         flex: 1,
@@ -190,9 +205,13 @@ class TelaInicial extends Component {
 const styles_tela_login = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#3498db',
+        backgroundColor: '#f10241',
         alignItems: "center",
         justifyContent: "center"
+    },
+    logo: {
+        width: 100,
+        height: 100
     }
 });
 
@@ -201,8 +220,8 @@ class TelaLogin extends React.Component {
         return (
             <View style={styles_tela_login.container}>
 
-                <View>
-
+                <View style={styles_tela_login.container}>
+                    <Logo/>
                 </View>
                 <Text>Login</Text>
                 <DadosLogin/>
@@ -226,6 +245,7 @@ class TelaTeste extends React.Component {
                     <Quadradinhos/>
                     <Entrada/>
                     <Botao/>
+
                 </View>
             </View>
         );
