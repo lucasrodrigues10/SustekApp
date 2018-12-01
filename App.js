@@ -5,6 +5,7 @@ import logo from './src/img/sustek-logo.png'
 import moeda from './src/img/moeda.jpg'
 import sustentavel from './src/img/sustentavel.jpg'
 import relogio from './src/img/relogio.jpg'
+import {Icon} from 'react-native-elements'
 
 const styles = StyleSheet.create({
     bigblue: {
@@ -139,13 +140,13 @@ class Logo extends Component {
 class Moeda extends Component {
     render() {
         return (
-            <View style={{alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+            <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
                 <Image
                     source={moeda}
                     style={{width: 150, height: 150}}
                     resizeMode={'contain'}
                 />
-                <Text style={{marginLeft: 10}}>
+                <Text style={{marginLeft: 10, color: 'white'}}>
                     Economize na conta de luz
                 </Text>
             </View>
@@ -156,14 +157,14 @@ class Moeda extends Component {
 class Relogio extends Component {
     render() {
         return (
-            <View style={{alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+            <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
                 <Image
                     source={relogio}
                     style={{width: 150, height: 150}}
                     resizeMode={'contain'}
                 />
-                <Text style={{marginLeft: 10}}>
-                    Antecipe seus gastos
+                <Text style={{marginLeft: 10, color: 'white'}}>
+                    Antecipe os seus gastos
                 </Text>
             </View>
         );
@@ -173,13 +174,13 @@ class Relogio extends Component {
 class Sustentavel extends Component {
     render() {
         return (
-            <View style={{alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+            <View style={{alignItems: 'center', justifyContent: 'center', flexDirection: 'row'}}>
                 <Image
                     source={sustentavel}
                     style={{width: 150, height: 150}}
                     resizeMode={'contain'}
                 />
-                <Text style={{marginLeft: 10}}>
+                <Text style={{marginLeft: 10, color: 'white'}}>
                     Ajude ao meio ambiente
                 </Text>
             </View>
@@ -242,21 +243,28 @@ class Pisca extends Component {
 }
 
 class TelaInicial extends Component {
+
     render() {
         return (
 
-            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+            <View style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: '#f10241'}}>
                 <View style={{flex: 1, flexDirection: 'column', justifyContent: "space-between", alignItems: 'center'}}>
                     <Moeda/>
                     <Relogio/>
                     <Sustentavel/>
                 </View>
-                <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
-                    <Button
-                        title="Login"
-                        color="#841584"
-                        onPress={() => this.props.navigation.navigate('Login')}
-                    />
+                <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end', marginBottom: 5}}>
+                    <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <Text style={{color: 'white'}} h1> Entrar </Text>
+                        <Icon
+                            raised
+                            name='arrow-right'
+                            type='font-awesome'
+                            color='#f50'
+                            onPress={() => this.props.navigation.navigate('Login')}
+                        />
+                    </View>
+
                 </View>
 
             </View>
@@ -321,7 +329,19 @@ const AppNavigator = createStackNavigator(
         Teste: TelaTeste
     },
     {
-        initialRouteName: "Home"
+        initialRouteName: 'Home',
+        headerLayoutPreset: 'center',
+        /* The header config from HomeScreen is now here */
+        defaultNavigationOptions: {
+            title: 'Sustek',
+            headerStyle: {
+                backgroundColor: 'blue',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        },
     }
 );
 
