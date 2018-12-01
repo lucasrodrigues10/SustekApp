@@ -14,10 +14,19 @@ React-Native
  
 ## Imagens
 ![Alt text](foto_1.jpg?raw=true "Início")
+![Alt text](foto_2.jpg?raw=true "Início")
+![Alt text](foto_3.jpg?raw=true "Início")
 
-## Tech/framework used
-react-native-cli: 1.2.0
-react-native: 0.55.4
+## Tecnologias
+"@babel/runtime": "^7.1.5",
+"react": "16.6.3",
+"react-native": "0.57.7",
+"react-native-elements": "^1.0.0-beta7",
+"react-native-gesture-handler": "^1.0.10",
+"react-native-svg": "^8.0.8",
+"react-native-vector-icons": "^6.1.0",
+"react-navigation": "^3.0.2",
+"victory-native": "^31.0.0"
 
 <b>Criado com</b>
 - [React-native](https://electron.atom.io)
@@ -26,16 +35,16 @@ react-native: 0.55.4
 Mostra as informações do usuário
 
 ## Instalação
-npm install 
+npm install // ou usa o yarn que é melhor
 react-native run-android 
 ou 
 react-native run-ios
 
-## Testes
-Rodar os testes :)
-
-## How to use?
+## Como testar?
 Baixar APK e instalar.
 
+## Chefão
+Murilão
+
 ## Crédito
-Lucas Rodrigues
+Lucas e Lucas
