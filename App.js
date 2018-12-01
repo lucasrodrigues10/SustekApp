@@ -47,18 +47,20 @@ class DadosLogin extends Component {
 
     render() {
         return (
-            <View style={{padding: 10}}>
-                <Text style={{color: 'red'}}>
+            <View style={{padding: 0}}>
+                <Text style={{color: 'blue'}}>
                     DIGITA CERTO, SEU BOSTINHA!
                 </Text>
                 <TextInput
                     style={{height: 40}}
                     placeholder='Usuário'
+                    placeholderTextColor = 'white'
                     onChangeText={(text) => this.setState({text})}
                 />
                 <TextInput
                     style={{height: 40}}
                     placeholder='Senha'
+                    placeholderTextColor = 'white'
                     onChangeText={(text) => this.setState({text})}
                 />
             </View>
@@ -123,7 +125,7 @@ class Logo extends Component {
             <View style={{alignItems: 'center'}}>
                 <Image
                     source={logo}
-                    style={{width: 400, height: 400}}
+                    style={{width: 350, height: 350}}
                     resizeMode={'contain'}
                 />
             </View>
@@ -191,6 +193,7 @@ class TelaInicial extends Component {
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
                 <Button
                     title="Login"
+                    color="#841584"
                     onPress={() => this.props.navigation.navigate('Login')}
                 />
                 <Button
@@ -223,13 +226,15 @@ class TelaLogin extends React.Component {
                 <View style={styles_tela_login.container}>
                     <Logo/>
                 </View>
-                <Text>Login</Text>
-                <DadosLogin/>
+                <View style={styles_tela_login.container}>
+                    <DadosLogin/>
+                    <Button
+                        title="Logar"
+                        color="#228B22"
+                        onPress={() => this.props.navigation.navigate('Teste')}
+                    />
+                </View>
 
-                <Button
-                    title="Logar"
-                    onPress={() => this.props.navigation.navigate('Teste')}
-                />
             </View>
         );
     }
