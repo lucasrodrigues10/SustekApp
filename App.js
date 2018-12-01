@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from "react-navigation";
+import {VictoryBar, VictoryChart, VictoryTheme, VictoryPie} from "victory-native";
 import logo from './src/img/sustek-logo.png'
 import moeda from './src/img/moeda.jpg'
 import sustentavel from './src/img/sustentavel.jpg'
@@ -243,10 +244,8 @@ class Pisca extends Component {
 }
 
 class TelaInicial extends Component {
-
     render() {
         return (
-
             <View style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: '#f10241'}}>
                 <View style={{flex: 1, flexDirection: 'column', justifyContent: "space-between", alignItems: 'center'}}>
                     <Moeda/>
@@ -306,11 +305,37 @@ class TelaLogin extends React.Component {
     }
 }
 
+const data = [
+    {quarter: 1, earnings: 13000},
+    {quarter: 2, earnings: 16500},
+    {quarter: 3, earnings: 14250},
+    {quarter: 4, earnings: 19000}
+];
+
+const styles_vic = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "white"
+    }
+});
+
 class TelaTeste extends React.Component {
     render() {
         return (
-            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+            <View style={{flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: '#f10241'}}>
                 <View style={{flex: 1}}>
+                    <VictoryPie
+                        colorScale="cool"
+                        data={[
+                            {x: "Televisão", y: 35},
+                            {x: "PC", y: 30},
+                            {x: "Geladeira", y: 65}
+                        ]}
+                        labelRadius={60}
+                        style={{ labels: { fill: "white", fontSize: 20, fontWeight: "bold" }}}
+                    />
                     <BobEsponja/>
                     <QuadradoLegal/>
                     <Quadradinhos/>
