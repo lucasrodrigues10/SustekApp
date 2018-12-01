@@ -179,7 +179,7 @@ class TelaInicial extends Component {
                     onPress={() => this.props.navigation.navigate('Login')}
                 />
                 <Button
-                    title="Logar"
+                    title="Teste"
                     onPress={() => this.props.navigation.navigate('Teste')}
                 />
             </View>
@@ -187,15 +187,28 @@ class TelaInicial extends Component {
     }
 }
 
+const styles_tela_login = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#3498db',
+        alignItems: "center",
+        justifyContent: "center"
+    }
+});
+
 class TelaLogin extends React.Component {
     render() {
         return (
-            <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+            <View style={styles_tela_login.container}>
+
+                <View>
+
+                </View>
                 <Text>Login</Text>
                 <DadosLogin/>
 
                 <Button
-                    title="Teste"
+                    title="Logar"
                     onPress={() => this.props.navigation.navigate('Teste')}
                 />
             </View>
