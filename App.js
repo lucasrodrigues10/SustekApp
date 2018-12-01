@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {AppRegistry, StyleSheet, Image, Text, View, TextInput, Alert, Button} from 'react-native';
 import {createStackNavigator, createAppContainer} from "react-navigation";
-import logo from './sustek-logo.png'
+import logo from './src/img/sustek-logo.png'
+import moeda from './src/img/moeda.jpg'
+import sustentavel from './src/img/sustentavel.jpg'
+import relogio from './src/img/relogio.jpg'
 
 const styles = StyleSheet.create({
     bigblue: {
@@ -54,13 +57,13 @@ class DadosLogin extends Component {
                 <TextInput
                     style={{height: 40}}
                     placeholder='Usuário'
-                    placeholderTextColor = 'white'
+                    placeholderTextColor='white'
                     onChangeText={(text) => this.setState({text})}
                 />
                 <TextInput
                     style={{height: 40}}
                     placeholder='Senha'
-                    placeholderTextColor = 'white'
+                    placeholderTextColor='white'
                     onChangeText={(text) => this.setState({text})}
                 />
             </View>
@@ -133,6 +136,57 @@ class Logo extends Component {
     }
 }
 
+class Moeda extends Component {
+    render() {
+        return (
+            <View style={{alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+                <Image
+                    source={moeda}
+                    style={{width: 150, height: 150}}
+                    resizeMode={'contain'}
+                />
+                <Text style={{marginLeft: 10}}>
+                    Economize na conta de luz
+                </Text>
+            </View>
+        );
+    }
+}
+
+class Relogio extends Component {
+    render() {
+        return (
+            <View style={{alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+                <Image
+                    source={relogio}
+                    style={{width: 150, height: 150}}
+                    resizeMode={'contain'}
+                />
+                <Text style={{marginLeft: 10}}>
+                    Antecipe seus gastos
+                </Text>
+            </View>
+        );
+    }
+}
+
+class Sustentavel extends Component {
+    render() {
+        return (
+            <View style={{alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+                <Image
+                    source={sustentavel}
+                    style={{width: 150, height: 150}}
+                    resizeMode={'contain'}
+                />
+                <Text style={{marginLeft: 10}}>
+                    Ajude ao meio ambiente
+                </Text>
+            </View>
+        );
+    }
+}
+
 const botao_estiloso = StyleSheet.create({
     container: {
         flex: 1,
@@ -190,16 +244,21 @@ class Pisca extends Component {
 class TelaInicial extends Component {
     render() {
         return (
+
             <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
-                <Button
-                    title="Login"
-                    color="#841584"
-                    onPress={() => this.props.navigation.navigate('Login')}
-                />
-                <Button
-                    title="Teste"
-                    onPress={() => this.props.navigation.navigate('Teste')}
-                />
+                <View style={{flex: 1, flexDirection: 'column', justifyContent: "space-between", alignItems: 'center'}}>
+                    <Moeda/>
+                    <Relogio/>
+                    <Sustentavel/>
+                </View>
+                <View style={{flex: 1, alignItems: 'center', justifyContent: 'flex-end'}}>
+                    <Button
+                        title="Login"
+                        color="#841584"
+                        onPress={() => this.props.navigation.navigate('Login')}
+                    />
+                </View>
+
             </View>
         );
     }
@@ -234,7 +293,6 @@ class TelaLogin extends React.Component {
                         onPress={() => this.props.navigation.navigate('Teste')}
                     />
                 </View>
-
             </View>
         );
     }
@@ -250,7 +308,6 @@ class TelaTeste extends React.Component {
                     <Quadradinhos/>
                     <Entrada/>
                     <Botao/>
-
                 </View>
             </View>
         );
